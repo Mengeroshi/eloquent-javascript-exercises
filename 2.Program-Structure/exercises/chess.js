@@ -1,7 +1,8 @@
 let mono = "";
+let size = 50; 
 
-for(let counter = 1; counter < 9; counter++){
-    for(let i = 1; i<9; i++){
+for(let counter = 0; counter < size; counter++){
+    for(let i = 0; i< size; i++){
         if((counter + i) % 2 == 0){
             mono = mono + "#";
         }else{
@@ -13,3 +14,11 @@ for(let counter = 1; counter < 9; counter++){
 
 console.log(mono);
 
+let momo = "";
+for(let counter = 0; counter < size; counter++){
+    for(let i = 0; i< size; i++){
+        momo = momo + "*"
+    }
+    momo = momo + "\n";
+}
+console.log(momo);
