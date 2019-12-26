@@ -1,4 +1,4 @@
-/*
+
 function printFarmInventory(cows, chickens){
     let cowString = String(cows);
     while(cowString.length < 3){
@@ -14,9 +14,9 @@ function printFarmInventory(cows, chickens){
 }
 
 printFarmInventory(2, 10);
-*/
+
 //Growing Function
-/*
+
 function printZeroPaddedWithLabel(number, label){
     let numberString = String(number);
     while(numberString.lenght < 3){
@@ -32,7 +32,7 @@ function printAnimalInventory(cows, chickens, pigs){
 }
 
 printAnimalInventory(2, 4, 30);
-*/
+
 
 function zeroPad(number, width){
     let strong = String(number);
