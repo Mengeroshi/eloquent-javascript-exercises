@@ -13,7 +13,7 @@ let exponente = 10;
 console.log(power(bass, exponente));
 
 //arrow function (one parameter)
-const square1 = (x) =>{ return x*x;}
+const square1 = (x) =>{return x*x;}
 
 const square2 = x => x*x;
 
