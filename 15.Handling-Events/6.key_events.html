@@ -1,0 +1,14 @@
+<p>This pages turns violet when  you hold the V keys.</p>
+<script>
+    window.addEventListener("keydown", event=>{
+        if (event.key == "v"){
+            document.body.style.background = "violet";
+        }
+    });
+
+    window.addEventListener("keyup", event=>{
+        if(event.key == "v"){
+            document.body.style.background = "";
+        }
+    });
+</script>

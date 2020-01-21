@@ -1,0 +1,22 @@
+<style>
+    #progress{
+        border-bottom: 2px solid blue;
+        width: 0;
+        position: fixed;
+        top: 0; 
+        left: 0;
+    }
+</style>
+
+<div id="progress"></div>
+
+<script>
+    document.body.appendChild(document.createTextNode(
+        "supercalifraliditicoespiralidoso".repeat(1000)));
+
+    let bar = document.querySelector("#progress");
+     window.addEventListener("scroll", ()=>{
+         let max = doument.body.scrollHeight - innerHeight;
+         bar.style.width = `${(pageXOffset/max) * 100}%`;
+     });
+</script>

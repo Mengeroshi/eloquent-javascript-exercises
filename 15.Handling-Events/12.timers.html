@@ -1,0 +1,10 @@
+<script>
+    let bombTimer = setTimeout(()=>{
+        console.log("Booom!")
+    }, 500);
+
+    if(Math.random() < 0.5){
+        console.log("Defused!");
+        clearTimeout(bombTimer);
+    }
+</script>
