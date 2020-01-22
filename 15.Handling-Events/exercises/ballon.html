@@ -2,12 +2,28 @@
 
 
 <script>
-    let globo = document.querySelector("p")
-    globo.addEventListener("keydown", event =>{
+    let globo = document.querySelector("p");
+    let tamaño = 100;
+    globo.style.fontSize = tamaño + "px";
+
+    window.addEventListener("keydown", event =>{
+        
         if(event.key == "ArrowUp"){
+            let crece = tamaño + (tamaño * .10);
+            if(crece > 500){
+                globo.removeEventListener("keydown", ()=> console.log("boom"));
+                let explosion = document.createTextNode("💥");
+                globo.parentNode.replaceChild(explosion, globo);
 
+            }
+            globo.style.fontSize = (crece) + "px";
+            tamaño = crece;
+            event.preventDefault()
         }else if(event.key == "ArrowDown"){
-
+            let disminuye = tamaño - (tamaño * .10);
+            globo.style.fontSize = (disminuye) + "px";
+            tamaño = disminuye;
+            event.preventDefault()
         }
     });
 </script>
