@@ -6,14 +6,12 @@
     let tamaño = 100;
     globo.style.fontSize = tamaño + "px";
 
-    window.addEventListener("keydown", event =>{
-        
+    function obo(event){
         if(event.key == "ArrowUp"){
             let crece = tamaño + (tamaño * .10);
             if(crece > 500){
-                globo.removeEventListener("keydown", ()=> console.log("boom"));
-                let explosion = document.createTextNode("💥");
-                globo.parentNode.replaceChild(explosion, globo);
+                window.removeEventListener("keydown", obo);
+                globo.textContent = "💥";
 
             }
             globo.style.fontSize = (crece) + "px";
@@ -25,5 +23,8 @@
             tamaño = disminuye;
             event.preventDefault()
         }
-    });
+    }
+
+    window.addEventListener("keydown", obo);
 </script>
+
