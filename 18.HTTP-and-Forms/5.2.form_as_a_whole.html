@@ -1,0 +1,13 @@
+<form action="example/submit.html">
+    Value: <input type="text" name="value">
+    <button type="submit">Save</button>
+</form>
+
+<script>
+    let form = document.querySelector("form");
+
+    form.addEventListener("submit", event=>{
+        console.log("Saving Value", form.elements.value.value);
+        event.preventDefault()
+    });
+</script>
