@@ -1,0 +1,33 @@
+<script>
+    /*
+    fetch("https://eloquentjavascript.net/author/text/plain")
+        .then(response =>{
+            console.log(response.status);
+            console.log(response.headers.get("Content-Type"));
+        });
+
+    fetch("https://eloquentjavascript.net/author/text/html")
+        .then(response =>{
+            console.log(response.status);
+        });
+    fetch("https://eloquentjavascript.net/author/aplication/json")
+        .then(response =>{
+            console.log(response.status);
+        }); 
+    */
+const url = "https://eloquentjavascript.net/author";
+const types = ["text/plain",
+               "text/html",
+               "application/json",
+               "application/rainbows+unicorns"];
+
+async function showTypes() {
+  for (let type of types) {
+    let resp = await fetch(url, {headers: {accept: type}});
+    console.log(`${type}: ${await resp.text()}\n`);
+  }
+}
+
+showTypes();
+    
+</script>

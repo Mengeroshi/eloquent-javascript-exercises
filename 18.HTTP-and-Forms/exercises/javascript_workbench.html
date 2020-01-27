@@ -1,0 +1,19 @@
+<textarea id="code">return "hi";</textarea>
+<button id="button">Run</button>
+<pre id="output"></pre>
+
+<script>
+
+    document.querySelector("button").addEventListener("click", ()=>{//las variables deben de estar dentro del loop
+        let code = document.querySelector("textarea").value;
+        let pre = document.querySelector("pre");
+       
+        try {
+            let result = Function(code)();
+            pre.innerText = String(result);
+        } catch (e) {
+            pre.innerText = "Error: " + e;
+        }
+
+    });
+</script>
