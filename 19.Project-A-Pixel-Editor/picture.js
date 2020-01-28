@@ -138,3 +138,37 @@ class PixelEditor {
       for (let ctrl of this.controls) ctrl.syncState(state);
     }
   }
+
+  class ToolSelect {
+    constructor(state, {tools, dispatch}) {
+      this.select = elt("select", {
+        onchange: () => dispatch({tool: this.select.value})
+      }, ...Object.keys(tools).map(name => elt("option", {
+        selected: name == state.tool
+      }, name)));
+      this.dom = elt("label", null, "🖌 Tool: ", this.select);
+    }
+    syncState(state) { this.select.value = state.tool; }
+  }
+
+  class ColorSelect {
+    constructor(state, {dispatch}) {
+      this.input = elt("input", {
+        type: "color",
+        value: state.color,
+        onchange: () => dispatch({color: this.input.value})
+      });
+      this.dom = elt("label", null, "🎨 Color: ", this.input);
+    }
+    syncState(state) { this.input.value = state.color; }
+  }
+
+
+  function draw(pos, state, dispatch) {
+    function drawPixel({x, y}, state) {
+      let drawn = {x, y, color: state.color};
+      dispatch({picture: state.picture.draw([drawn])});
+    }
+    drawPixel(pos, state);
+    return drawPixel;
+  }
